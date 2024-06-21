@@ -1,36 +1,61 @@
-# ExpressServer
+# ExpressServer - Backend for Slidely Task 2
+### Overview
+This backend server is built using TypeScript and Express. It serves as the backend for the Slidely Task 2 Windows Desktop App, providing endpoints for creating, viewing, and managing form submissions. The server uses a JSON file as a database to store submission data.
+### Features
+* Handles form submissions from the Windows Desktop App.
+* Provides endpoints to view and navigate through submissions.
+* Stores data in a JSON file.
+### Endpoints
+#### '/ping'
+* #### Method: 
+   GET
+* #### Description:
+   A simple endpoint to check if the server is running.
+* Response: 'true'
+#### '/submit'
+* #### Method: 
+   POST
+* #### Description:
+   Accepts form submissions.
+* #### Parameters:
+  * name (string): The name of the submitter.
+  * email (string): The email of the submitter.
+  * phone (string): The phone number of the submitter.
+  * github_link (string): The GitHub link for the task.
+  * stopwatch_time (string): The stopwatch time for the task.
+* #### Response: 
+  Confirmation message indicating successful submission.
+#### '/read'
+* #### Method: 
+  GET
+* #### Description: 
+  Retrieves a specific submission based on the provided index.
+* #### Query Parameter:
+  * index (number): The 0-indexed position of the submission to retrieve.
+  * Response: The details of the requested submission.
+## How to Run
+### Prerequisites
+* Node.js
+* TypeScript
+#### Installation
+##### 1.Clone the Repository
+  git clone <repository-url>
+  cd ExpressServer
+##### 2.Install Dependencies
+   npm install
+##### 3.Compile TypeScript
+   npm run build
+##### 4.Run the Server
+   npm start
+## Testing the Endpoints
+Use tools like Postman or curl to test the endpoints. Here are some examples:
+* #### Ping the server
+curl http://localhost:3000/ping
+* #### Submit a form
+  curl -X POST http://localhost:3000/submit -H "Content-Type: application/json" -d '{"name":"H R Abhinandan", "email":"abhinandanholalu2001@gmail.com", "phone":"8050506963", "github_link":"https://github.com/hrabhinandan", "stopwatch_time":"00:30:00"}'
+* #### Read a submission
+   curl http://localhost:3000/read?index=0
+### Contact
+For any questions or issues, please contact H R Abhinandan.
+##
 
-This is a brief description of your backend server.
-
-## Prerequisites
-
-- Node.js installed on your machine
-
-## Getting Started
-
-1. Clone this repository
-2. Install dependencies: `npm install`
-3. Start the server: `npm start`
-
-## Available Scripts
-
-- `npm start` - Start the server
-- `npm test` - Run tests
-
-## Folder Structure
-
-- `src/` - Source files
-- `test/` - Test files
-- `config/` - Configuration files
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch: `git checkout -b feature-name`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin feature-name`
-5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
