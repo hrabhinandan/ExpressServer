@@ -6,7 +6,7 @@ This backend server is built using TypeScript and Express. It serves as the back
 * Provides endpoints to view and navigate through submissions.
 * Stores data in a JSON file.
   
- ![slidely5](https://github.com/hrabhinandan/ExpressServer/assets/96574240/95f5fa26-4726-4f07-b2fd-62017836d4a0)
+![slidely8](https://github.com/hrabhinandan/ExpressServer/assets/96574240/a3bfd334-d531-43c8-acfb-b96a22fc748b)
 
 ### Endpoints
 #### '/ping'
@@ -58,12 +58,19 @@ Use tools like Postman or curl to test the endpoints. Here are some examples:
 * #### Ping the server
 curl http://localhost:3000/ping
 * #### Submit a form
-  curl -X POST http://localhost:3000/submit -H "Content-Type: application/json" -d '{"name":"H R Abhinandan", "email":"abhinandanholalu2001@gmail.com", "phone":"8050506963", "github_link":"https://github.com/hrabhinandan", "stopwatch_time":"00:58:00"}'
+  curl -X POST http://localhost:3000/submit -H "Content-Type: application/json" -d '{"name":"H R Abhinandan", "email":"abhinandanholalu2001@gmail.com", "phone":" +91 8050506963", "github_link":"https://github.com/hrabhinandan", "stopwatch_time":"00:01:06"}'
 * #### Read a submission
-* 
-![slidely6](https://github.com/hrabhinandan/ExpressServer/assets/96574240/de0a9de8-067e-4a53-bb27-ffc0d0a15e98)
+  
+![slidely6](https://github.com/hrabhinandan/ExpressServer/assets/96574240/b5bcdb59-b8cd-4e96-ba3f-b4163996edf6)
 
    curl http://localhost:3000/read?index=0
+   
+* #### Search by emailid
+
+ ![slidely7](https://github.com/hrabhinandan/ExpressServer/assets/96574240/68d13f28-8ee5-4f8e-a35f-90e083fade22)
+  
+ curl http://localhost:3000/search?email=abhinandanholalu2001@gmail.com
+
 ### Contact
 For any questions or issues, please contact H R Abhinandan.
 ##
