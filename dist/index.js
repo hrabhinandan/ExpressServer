@@ -38,6 +38,42 @@ app.get('/read', (req, res) => {
         res.status(404).json({ error: 'Submission not found' });
     }
 });
+app.get('/search', (req, res) => {
+    const email = req.query.email;
+    const submissions = JSON.parse(fs_1.default.readFileSync(dbFilePath, 'utf8'));
+    const result = submissions.filter(submission => submission.email === email);
+    if (result.length > 0) {
+        res.json(result);
+    }
+    else {
+        res.status(404).json({ error: 'No submissions found with the provided email' });
+    }
+});
+app.delete('/delete', (req, res) => {
+    const index = parseInt(req.query.index, 10);
+    let submissions = JSON.parse(fs_1.default.readFileSync(dbFilePath, 'utf8'));
+    if (index >= 0 && index < submissions.length) {
+        submissions.splice(index, 1);
+        fs_1.default.writeFileSync(dbFilePath, JSON.stringify(submissions, null, 2), 'utf-8');
+        res.json({ success: true });
+    }
+    else {
+        res.status(404).json({ error: 'Submission not found' });
+    }
+});
+app.put('/edit', (req, res) => {
+    const index = parseInt(req.query.index, 10);
+    const { name, email, phone, github_link, stopwatch_time } = req.body;
+    let submissions = JSON.parse(fs_1.default.readFileSync(dbFilePath, 'utf8'));
+    if (index >= 0 && index < submissions.length) {
+        submissions[index] = { name, email, phone, github_link, stopwatch_time };
+        fs_1.default.writeFileSync(dbFilePath, JSON.stringify(submissions, null, 2), 'utf-8');
+        res.json({ success: true });
+    }
+    else {
+        res.status(404).json({ error: 'Submission not found' });
+    }
+});
 app.get('/ping', (_req, res) => {
     res.json(true);
 });

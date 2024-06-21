@@ -27,7 +27,7 @@
       "stopOnEntry": true,
       "console": "externalTerminal",
       "env": {
-        "port": "1337"
+        "port": "3000"
       }
     }
   ],
