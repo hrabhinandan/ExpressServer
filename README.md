@@ -61,16 +61,16 @@ curl http://localhost:3000/ping
   curl -X POST http://localhost:3000/submit -H "Content-Type: application/json" -d '{"name":"H R Abhinandan", "email":"abhinandanholalu2001@gmail.com", "phone":" +91 8050506963", "github_link":"https://github.com/hrabhinandan", "stopwatch_time":"00:01:06"}'
 * #### Read a submission
   
+ curl http://localhost:3000/read?index=0
+ 
 ![slidely6](https://github.com/hrabhinandan/ExpressServer/assets/96574240/b5bcdb59-b8cd-4e96-ba3f-b4163996edf6)
 
-   curl http://localhost:3000/read?index=0
-   
 * #### Search by emailid
+  
+curl http://localhost:3000/search?email=abhinandanholalu2001@gmail.com
 
  ![slidely7](https://github.com/hrabhinandan/ExpressServer/assets/96574240/68d13f28-8ee5-4f8e-a35f-90e083fade22)
   
- curl http://localhost:3000/search?email=abhinandanholalu2001@gmail.com
-
 ### Contact
 For any questions or issues, please contact H R Abhinandan.
 ##
