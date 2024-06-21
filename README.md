@@ -5,6 +5,9 @@ This backend server is built using TypeScript and Express. It serves as the back
 * Handles form submissions from the Windows Desktop App.
 * Provides endpoints to view and navigate through submissions.
 * Stores data in a JSON file.
+  
+ ![slidely5](https://github.com/hrabhinandan/ExpressServer/assets/96574240/95f5fa26-4726-4f07-b2fd-62017836d4a0)
+
 ### Endpoints
 #### '/ping'
 * #### Method: 
@@ -47,13 +50,19 @@ This backend server is built using TypeScript and Express. It serves as the back
    npm run build
 ##### 4.Run the Server
    npm start
+   
+   ![slidely7](https://github.com/hrabhinandan/ExpressServer/assets/96574240/b787fe8a-f93c-4234-8fec-06949de3dc69)
+
 ## Testing the Endpoints
 Use tools like Postman or curl to test the endpoints. Here are some examples:
 * #### Ping the server
 curl http://localhost:3000/ping
 * #### Submit a form
-  curl -X POST http://localhost:3000/submit -H "Content-Type: application/json" -d '{"name":"H R Abhinandan", "email":"abhinandanholalu2001@gmail.com", "phone":"8050506963", "github_link":"https://github.com/hrabhinandan", "stopwatch_time":"00:30:00"}'
+  curl -X POST http://localhost:3000/submit -H "Content-Type: application/json" -d '{"name":"H R Abhinandan", "email":"abhinandanholalu2001@gmail.com", "phone":"8050506963", "github_link":"https://github.com/hrabhinandan", "stopwatch_time":"00:58:00"}'
 * #### Read a submission
+* 
+![slidely6](https://github.com/hrabhinandan/ExpressServer/assets/96574240/de0a9de8-067e-4a53-bb27-ffc0d0a15e98)
+
    curl http://localhost:3000/read?index=0
 ### Contact
 For any questions or issues, please contact H R Abhinandan.
